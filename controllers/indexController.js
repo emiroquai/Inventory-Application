@@ -11,6 +11,6 @@ async function getHome (req, res) {
 }
 
 module.exports = {
+  links,
   getHome,
-
 }
