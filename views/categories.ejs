@@ -9,7 +9,7 @@
   <body>
     <%- include('navbar', {links: links}) %>
     <main>
-      <h1>Categories</h1>
+      <h2>Categories</h2>
       <ul class="categoriesBoard">
         <% categories.forEach((category) => { %>
           <%- include('categoryCard', {category: category}); %>
