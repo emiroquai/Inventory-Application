@@ -10,10 +10,11 @@
     <%- include('navbar', {links: links}) %>
     <main>
       <div class="itemView">
-        <img class="itemViewImg" src="<%= item.imageUrl %>" alt="<%= item.name %>">
+        <img class="itemViewImg" src="<%= item.imageUrl %>" alt="<%= item.title %>">
         <div class="itemInfo">
-          <h2><%= item.name %></h2>
-          <p class="info">Info goes here</p>
+          <h2><%= item.title %> (<%= item.releaseYear %>)</h2>
+          <h3><%= item.category %></h3>
+          <p class="info"><%= item.description %></p>
         </div>
       </div>
       

@@ -91,3 +91,14 @@ ul, li, a, span {
   width: 300px;
   object-fit: cover;
 }
+
+.newMovieForm {
+  display: grid;
+  width: 350px;
+  gap: 20px;
+}
+
+button {
+  width: 100px;
+  justify-self: center;
+}

@@ -35,6 +35,7 @@ async function newCategoryPost(req, res) {
 }
 
 module.exports = {
+  categories,
   getAllCategories,
   getCategory,
   newCategoryGet,
