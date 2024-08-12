@@ -79,3 +79,15 @@ ul, li, a, span {
   align-items: flex-end;
   padding: 10px;
 }
+
+.itemView {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+}
+
+.itemViewImg {
+  height: 500px;
+  width: 300px;
+  object-fit: cover;
+}

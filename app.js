@@ -13,7 +13,7 @@ app.use(express.static(assetsPath));
 app.use(express.urlencoded({ extended: true }));
 app.use("/", indexRouter);
 app.use("/categories", categoriesRouter);
-app.use("/movies", moviesRouter)
+app.use("/movies", moviesRouter);
 
 const PORT = 3000;
 app.listen(PORT, () => console.log(`Inventory Application - listening on port ${PORT}!`));
