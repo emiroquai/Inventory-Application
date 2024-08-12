@@ -17,17 +17,12 @@ async function newCategoryGet(req, res) {
 }
 
 async function newCategoryPost(req, res) {
-  console.log("Category to be saved: ", req.body.name);
   const newCategory = req.body;
-  const href = newCategory.name.toLowerCase();
-  newCategory.href = href;
-  //await db.insertCategory(newCategory);
-  categories.push(newCategory); // to be deleted
+  await db.insertCategory(newCategory);
   res.redirect("/categories");
 }
 
 module.exports = {
-  // categories,
   getAllCategories,
   getCategory,
   newCategoryGet,

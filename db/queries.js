@@ -6,6 +6,11 @@ async function getAllCategories() {
   return categories;
 }
 
+async function insertCategory(newCategory) {
+  await pool.query("INSERT INTO categories (name, imageurl) VALUES ($1, $2)", [newCategory.name, newCategory.imageUrl]);
+}
+
 module.exports = {
   getAllCategories,
+  insertCategory,
 }
