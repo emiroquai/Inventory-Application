@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>Movies</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <%- include('navbar', {links: links}) %>
+    <main>
+      <h2>Movies</h2>
+      <ul class="moviesBoard">
+        <% movies.forEach((movie) => { %>
+          <%- include('movieCard', {movie: movie}); %>
+        <% }); %>
+      </ul>
+    </main>
+  </body>
+</html>
