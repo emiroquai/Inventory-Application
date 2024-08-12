@@ -9,11 +9,17 @@ const categories = [
   { href: "sci-fi", text: "Sci-Fi", imageUrl: "https://www.indiewire.com/wp-content/uploads/2014/12/interstellar-tesseract.jpg?w=2048&h=1494&crop=1" },
 ];
 
-async function getCategories(req, res) {
-  //Get categories from db -- wip
+async function getAllCategories(req, res) {
+  //Get all categories from db -- wip
   res.render('categories', { categories: categories, links: links });
 }
 
+async function getCategory(req, res) {
+  //Get selected category from db -- wip
+  const category = req.params.categoryHref;
+  res.send(category);
+}
 module.exports = {
-  getCategories,
+  getAllCategories,
+  getCategory,
 }
