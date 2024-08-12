@@ -14,6 +14,9 @@
         <% movies.forEach((movie) => { %>
           <%- include('movieCard', {movie: movie}); %>
         <% }); %>
+        <li class="categoryCard" style="background-color: darkgrey">
+          <a href="/movies/new %>">+ New Movie</a>
+        </li>
       </ul>
     </main>
   </body>

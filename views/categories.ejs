@@ -14,6 +14,9 @@
         <% categories.forEach((category) => { %>
           <%- include('categoryCard', {category: category}); %>
         <% }); %>
+        <li class="categoryCard" style="background-color: darkgrey">
+          <a href="/categories/new %>">+ New Category</a>
+        </li>
       </ul>
     </main>
   </body>
