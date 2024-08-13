@@ -12,7 +12,7 @@ function Item (title, category_id, release_year, description, imageUrl) {
 
 async function getAllmovies(req, res) {
   const movies = await db.getAllmovies();
-  res.render('movies', { movies: movies, links: links });
+  res.render('movies', { movies: movies, links: links, title: 'All Movies' });
 }
 
 async function getItem(req, res) {
