@@ -8,9 +8,9 @@ async function getAllCategories(req, res) {
 }
 
 async function getCategory(req, res) {
-  const category_name = req.params.categoryHref;
+  const category_name = req.params.category_name;
   const category = await db. getCategory(category_name);
-  res.render('movies', { movies: category, links: links, title: capitalizeFirtLetter(category_name) });
+  res.render('category', { category: category, links: links, title: capitalizeFirtLetter(category_name), category_name: category_name });
 }
 
 async function newCategoryGet(req, res) {
@@ -19,8 +19,18 @@ async function newCategoryGet(req, res) {
 
 async function newCategoryPost(req, res) {
   const newCategory = req.body;
+  if (newCategory.imageUrl === '') {
+    newCategory.imageUrl = "https://st2.depositphotos.com/1105977/9877/i/450/depositphotos_98775856-stock-photo-retro-film-production-accessories-still.jpg";
+  }
   await db.insertCategory(newCategory);
   res.redirect("/categories");
+}
+
+async function deleteCategory(req, res) {
+  const category_name = req.params.category_name;
+  console.log(category_name)
+  await db.deleteCategory(category_name);
+  res.redirect('/categories');
 }
 
 module.exports = {
@@ -28,4 +38,5 @@ module.exports = {
   getCategory,
   newCategoryGet,
   newCategoryPost,
+  deleteCategory,
 }

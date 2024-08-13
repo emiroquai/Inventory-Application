@@ -43,6 +43,11 @@ async function deleteItem(item_id) {
   await pool.query('DELETE FROM movies WHERE movie_id = $1', [item_id]);
 }
 
+async function deleteCategory(category_name) {
+  await pool.query('DELETE FROM movies WHERE category_id = (SELECT category_id FROM Categories WHERE name = $1)', [category_name]);
+  await pool.query('DELETE FROM categories WHERE LOWER(name) = $1', [category_name]);
+}
+
 module.exports = {
   getAllCategories,
   insertCategory,
@@ -52,4 +57,5 @@ module.exports = {
   getCategoryId,
   insertItem,
   deleteItem,
+  deleteCategory
 };
