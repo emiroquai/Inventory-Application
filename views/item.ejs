@@ -15,6 +15,10 @@
           <h2><%= item.title %> (<%= item.release_year %>)</h2>
           <h3><%= item.category %></h3>
           <p class="info"><%= item.description %></p>
+          <form id="deleteMovieForm" action="./<%= item.movie_id %>/delete" method="POST">
+            <input type="hidden" id="itemId" name="itemId" value="<%= item.movie_id %>">
+            <button type="submit">Delete Movie</button>
+          </form>        
         </div>
       </div>
       

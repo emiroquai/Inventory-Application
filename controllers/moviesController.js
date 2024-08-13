@@ -42,9 +42,16 @@ async function newItemPost(req, res) {
   res.redirect("/movies")
 }
 
+async function deleteItem(req, res) {
+  const item_id = Number(req.params.itemId);
+  await db.deleteItem(item_id);
+  res.redirect("/movies");
+}
+
 module.exports = {
   getAllmovies,
   getItem,
   newItemGet,
   newItemPost,
+  deleteItem
 }

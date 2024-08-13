@@ -13,6 +13,7 @@ moviesRouter.get('/categories', function(req, res) {
 moviesRouter.get('/', moviesController.getAllmovies);
 moviesRouter.get('/new', moviesController.newItemGet);
 moviesRouter.post('/new', moviesController.newItemPost);
-moviesRouter.get('/:itemId', moviesController.getItem)
+moviesRouter.get('/:itemId', moviesController.getItem);
+moviesRouter.post('/:itemId/delete', moviesController.deleteItem);
 
 module.exports = moviesRouter;

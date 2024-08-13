@@ -19,7 +19,6 @@ async function getAllmovies() {
 async function getItemCategory(item) {
   const result = await pool.query('SELECT m.movie_id, m.category_id, c.name AS category_name FROM Movies m JOIN Categories c ON m.category_id = c.category_id WHERE m.movie_id = $1;', [item.movie_id]);
   const itemCategory = result.rows[0];
-  console.log(itemCategory)
   return itemCategory;
 }
 
@@ -40,6 +39,10 @@ async function insertItem(newItem) {
   await pool.query("INSERT INTO movies (title, category_id, release_year, description, imageurl) VALUES ($1, $2, $3, $4, $5)", [newItem.title, newItem.category_id, newItem.release_year, newItem.description, newItem.imageUrl]);
 };
 
+async function deleteItem(item_id) {
+  await pool.query('DELETE FROM movies WHERE movie_id = $1', [item_id]);
+}
+
 module.exports = {
   getAllCategories,
   insertCategory,
@@ -48,4 +51,5 @@ module.exports = {
   getCategory,
   getCategoryId,
   insertItem,
+  deleteItem,
 };
