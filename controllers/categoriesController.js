@@ -7,9 +7,9 @@ async function getAllCategories(req, res) {
 }
 
 async function getCategory(req, res) {
-  //Get selected category from db -- wip
-  const category = req.params.categoryHref;
-  res.send(category);
+  const category_name = req.params.categoryHref;
+  const category = await db. getCategory(category_name);
+  res.render('movies', { movies: category, links: links });
 }
 
 async function newCategoryGet(req, res) {
