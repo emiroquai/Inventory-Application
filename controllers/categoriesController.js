@@ -28,7 +28,6 @@ async function newCategoryPost(req, res) {
 
 async function deleteCategory(req, res) {
   const category_name = req.params.category_name;
-  console.log(category_name)
   await db.deleteCategory(category_name);
   res.redirect('/categories');
 }
