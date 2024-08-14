@@ -9,7 +9,30 @@
   <body>
     <%- include('navbar', {links: links}) %>
     <main>
-      <h1>Movie Inventory</h1>
-    </main>
+      <h2>Featured Movies</h2>
+      <div class="slider-container">
+        <button id="prevBtn" class="slider-btn">❮</button>
+        <div class="slider">
+          <% movies.forEach((movie) => { %>
+            <div class="slide">
+              <a href="/movies/<%= movie.movie_id %>">
+                <img src="<%= movie.imageurl %>" alt="<%= movie.title %>">
+              </a>
+              <h4><%= movie.title %></h4>
+            </div>          
+          <% }); %>
+        </div>
+        <button id="nextBtn" class="slider-btn">❯</button>
+      </div>
+      <h2>Featured Categories</h2>
+      <ul class="categoriesBoard">
+        <% categories.forEach((category) => { %>
+          <%- include('categoryCard', {category: category}); %>
+        <% }); %>
+        </li>
+      </ul> 
+    </main>    
+    <%- include('footer') %>
+    <script src="./script.js"></script>
   </body>
 </html>

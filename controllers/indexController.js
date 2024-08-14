@@ -1,4 +1,4 @@
-// const db = require("../db/queries");
+const db = require("../db/queries");
 
 const links = [
   { href: "/home", text: "Home" },
@@ -7,7 +7,9 @@ const links = [
 ];
 
 async function getHome (req, res) {
-  res.render('home', { links: links });
+  const movies = await db.getAllmovies();
+  const categories = await db.getAllCategories();
+  res.render('home', { links: links, movies: movies, categories: categories });
 }
 
 module.exports = {
