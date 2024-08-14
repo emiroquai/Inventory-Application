@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "bfg": "^0.3.0",
     "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "express": "^4.19.2",
