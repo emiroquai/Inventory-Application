@@ -15,5 +15,5 @@ app.use("/", indexRouter);
 app.use("/categories", categoriesRouter);
 app.use("/movies", moviesRouter);
 
-const PORT = 3000;
-app.listen(PORT, () => console.log(`Inventory Application - listening on port ${PORT}!`));
+const port = process.env.PORT || 3000;
+app.listen(port, "0.0.0.0", () => console.log(`Inventory Application - listening on port ${port}!`));
