@@ -1,10 +1,29 @@
 {
   "dependencies": {
-    "bfg": "^0.3.0",
+  "bfg": "^0.3.0",
     "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "express": "^4.19.2",
     "pg": "^8.12.0",
     "uuid": "^10.0.0"
-  }
+  },
+  "name": "inventory-application",
+  "description": "",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emiroquai/Inventory-Application.git"
+  },
+  "author": "emiroquai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emiroquai/Inventory-Application/issues"
+  },
+  "homepage": "https://github.com/emiroquai/Inventory-Application#readme"
 }
