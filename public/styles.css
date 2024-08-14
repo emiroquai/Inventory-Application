@@ -198,6 +198,7 @@ ul, li, a, span {
   font-family: inherit;
   color: inherit;
   padding: 10px;
+  cursor: pointer;
 }
 
 .delete {
@@ -211,6 +212,10 @@ input, select {
   border-radius: 10px;
   padding: 7px;
   color: white;
+}
+
+.catTitle {
+  align-self: flex-start;
 }
 
 footer {

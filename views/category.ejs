@@ -9,7 +9,13 @@
   <body>
     <%- include('navbar', {links: links}) %>
     <main>
-      <h2><%= title %></h2>
+      <div class="catTitle">
+        <h2><%= title %></h2>
+        <form id="deleteCategoryForm" action="./<%= category_name %>/delete" method="POST">
+          <input type="hidden" id="category_name" name="category_name" value="<%= category_name %>">
+          <button class="btn delete" type="submit">Delete Category</button>
+      </div>
+      </form>        
       <ul class="moviesBoard">
         <% category.forEach((movie) => { %>
           <%- include('movieCard', {movie: movie}); %>
@@ -18,10 +24,6 @@
           <a href="/movies/new %>"><h4>+ New Movie</h4></a>
         </li>
       </ul>
-      <form id="deleteCategoryForm" action="./<%= category_name %>/delete" method="POST">
-        <input type="hidden" id="category_name" name="category_name" value="<%= category_name %>">
-        <button type="submit">Delete Category</button>
-      </form>        
     </main>
     <%- include('footer') %>
   </body>
