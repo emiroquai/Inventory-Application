@@ -17,7 +17,7 @@
           <p class="info"><%= item.description %></p>
           <form id="deleteMovieForm" action="./<%= item.movie_id %>/delete" method="POST">
             <input type="hidden" id="itemId" name="itemId" value="<%= item.movie_id %>">
-            <button type="submit">Delete Movie</button>
+            <button class="btn delete" type="submit">Delete Movie</button>
           </form>        
         </div>
       </div>
