@@ -69,7 +69,7 @@ ul, li, a, span {
   flex-wrap: wrap;
 }
 
-.categoryCard, .movieCard {
+.categoryCard {
   cursor: pointer;
   height: 200px;
   width: 250px;
@@ -83,6 +83,23 @@ ul, li, a, span {
   display: flex;
   align-items: flex-end; 
   color: whitesmoke;
+}
+
+.movieCard {
+  cursor: pointer;
+  height: 350px;
+  width: 250px;
+  background-color: violet; 
+  border-radius: 15px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  overflow: hidden; 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  display: flex;
+  align-items: flex-end; 
+  color: whitesmoke;
+
 }
 
 .categoryCard:hover, .movieCard:hover, .slide:hover {
