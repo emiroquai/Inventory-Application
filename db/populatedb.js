@@ -43,7 +43,7 @@ INSERT INTO movies (title, category_id, release_year, description, imageurl) VAL
 async function main() {
   console.log("seeding...");
   const client = new Client({
-    connectionString: process.env.LOCAL_DATABASE_URL,
+    connectionString: process.env.DATABASE_PUBLIC_URL,
   });
   try {
     await client.connect();
