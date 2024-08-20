@@ -1,6 +1,6 @@
 const { links } = require("./indexController");
 const db = require("../db/queries");
-const capitalizeFirtLetter = require("../tools/capitalizeFirstLetter");
+const capitalizeFirstLetter = require("../tools/capitalizeFirstLetter");
 
 async function getAllCategories(req, res) {
   const categories = await db.getAllCategories();
@@ -10,7 +10,7 @@ async function getAllCategories(req, res) {
 async function getCategory(req, res) {
   const category_name = req.params.category_name;
   const category = await db. getCategory(category_name);
-  res.render('category', { category: category, links: links, title: capitalizeFirtLetter(category_name), category_name: category_name });
+  res.render('category', { category: category, links: links, title: capitalizeFirstLetter(category_name), category_name: category_name });
 }
 
 async function newCategoryGet(req, res) {
